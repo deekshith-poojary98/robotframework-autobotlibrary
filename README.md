@@ -112,4 +112,4 @@ print(f"Button found at: {location}")
 Contributions, issues, and feature requests are welcome! Feel free to open a pull request or issue on the GitHub repository.
 
 ## License
-This project is licensed under the BSD-3-Clause License.
+This project is licensed under the [BSD-3-Clause License](https://github.com/deekshith-poojary98/robotframework-autobotlibrary?tab=License-1-ov-file).
