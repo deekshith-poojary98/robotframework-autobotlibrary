@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Tracker and Key Logger</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #423f3f;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: #afafaf;
+            border-radius: 5px;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .count {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #18928b;
+        }
+
+        .button-info {
+            font-size: 18px;
+            margin-top: 5px;
+            color: #18928b;
+        }
+
+        textarea {
+            width: 90%;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #000000;
+            color: wheat;
+            background-color: #afafaf;
+            border-radius: 5px;
+            margin-top: 20px;
+            resize: vertical;
+            max-height: 250px;
+            min-height: 100px;
+        }
+
+        .key-display {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #18928b;
+        }
+
+        /* Style for slider */
+        .slider-container {
+            margin-top: 20px;
+            width: 26%;
+            text-align: center;
+        }
+
+        .slider {
+            width: 100%;
+            height: 15px;
+        }
+
+        .slider-value {
+            font-size: 18px;
+            color: #18928b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="clickButton">Click Me</button>
+        <div class="count" id="clickCount">Click Count: 0</div>
+        <div class="button-info" id="buttonInfo">No button clicked</div>
+    </div>
+
+    <div class="container">
+        <textarea id="textArea" placeholder="Start typing..."></textarea>
+        <div class="key-display" id="keyDisplay">Keys Typed: </div>
+    </div>
+
+    <!-- Slider Container -->
+    <div class="container slider-container">
+        <label for="slider">Slider</label>
+        <input type="range" id="slider" class="slider" min="0" max="100" value="50">
+        <div class="slider-value" id="sliderValue">50</div>
+    </div>
+
+    <script>
+        let clickCount = 0;
+
+        // Button click tracking
+        document.getElementById('clickButton').addEventListener('mousedown', function(event) {
+            clickCount++;
+            document.getElementById('clickCount').innerText = `Click Count: ${clickCount}`;
+
+            let buttonClicked = '';
+            if (event.button === 0) {
+                buttonClicked = 'Left Button';
+            } else if (event.button === 1) {
+                buttonClicked = 'Middle Button';
+            } else if (event.button === 2) {
+                buttonClicked = 'Right Button';
+            }
+            document.getElementById('buttonInfo').innerText = `${buttonClicked} Clicked`;
+        });
+
+        // Key typing tracking
+        document.getElementById('textArea').addEventListener('keydown', function(event) {
+            let keyPressed = event.key;
+            document.getElementById('keyDisplay').innerText = `Keys Typed: ${keyPressed}`;
+        });
+
+        // Slider value tracking
+        const slider = document.getElementById('slider');
+        const sliderValue = document.getElementById('sliderValue');
+
+        // Update slider value on change
+        slider.addEventListener('input', function() {
+            sliderValue.innerText = slider.value;
+        });
+    </script>
+</body>
+</html>
