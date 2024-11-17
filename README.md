@@ -11,6 +11,12 @@ AutoBotLibrary is a Python library designed to integrate with Robot Framework to
 ## Documentation
 You can find the keyword documentation [here](https://deekshith-poojary98.github.io/robotframework-autobotlibrary/).
 
+## Note
+You must install tkinter on Linux to use MouseInfo. Run the following: 
+```bash 
+sudo apt-get install python3-tk python3-dev
+```
+
 ## Installation
 ```bash
 pip install robotframework-autobotlibrary
