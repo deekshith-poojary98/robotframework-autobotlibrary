@@ -1,4 +1,9 @@
 # AutoBotLibrary
+
+[![PyPI version](https://badge.fury.io/py/robotframework-autobotlibrary.svg)](https://badge.fury.io/py/robotframework-autobotlibrary)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python](https://img.shields.io/pypi/pyversions/robotframework-autobotlibrary.svg)](https://pypi.org/project/robotframework-autobotlibrary/)
+
 AutoBotLibrary is a Python library designed to integrate with Robot Framework to enable seamless GUI automation. It builds upon [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/index.html) to provide a comprehensive set of utilities for mouse control, keyboard interactions, dialog handling, and image-based UI automation.  
 
 ## Features
